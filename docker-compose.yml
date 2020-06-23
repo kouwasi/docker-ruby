@@ -19,6 +19,7 @@ services:
       - ./environments/db.env
     volumes:
       - db-data:/var/lib/mysql
+      - ./containers/db/initializers:/docker-entrypoint-initdb.d
   web:
     build:
       context: containers/nginx
